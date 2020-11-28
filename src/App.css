@@ -51,3 +51,9 @@ input[type=text] {
 li {
     padding: 5px;
 }
+
+img {
+    max-width: 200px;
+    float: right;
+    border-radius: 10px;
+}
