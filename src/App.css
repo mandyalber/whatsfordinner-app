@@ -1,22 +1,41 @@
+* {
+    box-sizing: border-box
+}
+
 .app {
     display: grid;
     grid-template-areas: "header header header header" 
-    "sidebar main main main" "footer footer footer footer";
-    grid-template-columns: auto auto;
-    grid-template-rows: 100px 1fr;
-    min-height: 500px;
+    "main main main main" "sidebar sidebar sidebar sidebar";
+    grid-template-columns: 0px ; 
+    min-height: 100px;
 }
 
-header{
+header {
     grid-area: header;
     text-align: center;
     padding: 20px;
     background-color: dimgray;
+    font-size: 14px;
 }
 
 sidebar {
     grid-area: sidebar;
-    background-color: lightgrey;
+    background-color: lightgrey;    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+        
+}
+
+sidebar li {  
+    margin: 0px 1%;   
+    float: left;
+    display: block;
+    text-align: center;    
+    text-decoration: none;
+    font-size: 12px;   
+    width: 15%;  
+    margin-bottom: 10px;
 }
 
 main {
@@ -24,15 +43,15 @@ main {
 }
 
 footer {
-    grid-area: footer;
-    text-align: center;
-    padding: 20px;
-    background-color: dimgray;
+    display: none;
+}
+
+form.login-form {
+    display: none;
 }
 
 form {
-    max-width: 200px;
-    margin: 30px 10px 100px 10px;
+    margin: 0% 15% 15% 15%;
 }
 
 h2, p {
@@ -43,17 +62,72 @@ input, label, button{
     margin-bottom: 10px;
 }
 
-input[type=text] {
-    width: 100px;
+input[type=text], input button {
+    width: 100%;
+    padding-right: 5%;
     display: inline-block;
 }
 
 li {
-    padding: 5px;
+    text-decoration: none;
 }
 
 img {
-    max-width: 200px;
-    float: right;
+    width: 100%;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 800px){
+    .app {
+        grid-template-areas: "header header header header" 
+        "sidebar main main main" "footer footer footer footer";
+        grid-template-columns: auto auto;
+        grid-template-rows: 100px 1fr;
+        min-height: 500px;
+    }
+
+    
+    sidebar {
+        grid-area: sidebar;
+        background-color: lightgrey;
+        position: relative;
+        width: 200px;
+    }
+
+    sidebar li {   
+        float: none;
+        text-align: left;    
+        text-decoration: none;
+        font-size: 14px;   
+        width: 100%;  
+    }
+    
+    main {
+        grid-area: main;
+    }
+    
+    footer {
+        display: block;
+        grid-area: footer;
+        text-align: center;
+        padding: 20px;
+        background-color: dimgray;
+    }
+
+    img {
+        max-width: 200px;    
+        float: right;
+    }
+
+    form {
+        margin: 5% 5% 15% 5%;
+    }
+
+    form.login-form {
+        display: block;
+    }
+
+    li.log-in {
+        display: none;
+    }
 }

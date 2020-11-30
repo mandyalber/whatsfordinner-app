@@ -15,8 +15,10 @@ export default function UserDashboardNav(props) {
                     <input type="submit" value="Submit" />
                 </fieldset>
             </form>
-            <p><a href="/user-dashboard">Back to Dashboard</a></p>
-            <p><a href="/">Home</a></p>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/user-dashboard">Back to Dashboard</a></li>                
+            </ul>
         </div>
     )
 }

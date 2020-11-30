@@ -3,7 +3,7 @@ import React from 'react'
 export default function LandingPageNav(props) {
     return (
         <div className="landing-page-nav">
-            <form action="/user-dashboard">
+            <form className="login-form" action="/user-dashboard">
                 <fieldset>
                     <legend>Login:</legend>
                     <label for="username">Username: </label>
@@ -13,7 +13,11 @@ export default function LandingPageNav(props) {
                     <button>Submit</button>
                 </fieldset>
             </form>
-            <p><a href="/create-account">Create an Account</a></p>
+            <ul>
+                <li className="log-in"><a href="/user-dashboard">Log In</a></li>
+                <li><a href="/create-account">Create an Account</a></li>
+            </ul>
+
         </div>
     )
 }

@@ -7,8 +7,12 @@ export default function CreateAccount(props) {
             <form action="">
                 <fieldset>
                     <legend>Enter your info</legend>
-                    <label for="username">Username: </label>
-                    <input id="username" type="text" />
+                    <label for="fname">First Name: </label>
+                    <input id="fname" type="text" />
+                    <label for="lname">Last Name: </label>
+                    <input id="lname" type="text" />
+                    <label for="email">Email: </label>
+                    <input id="email" type="text" />
                     <label for="password">Password: </label>
                     <input type="text" name="" id="password" />
                     <input type="submit" value="Submit" />
