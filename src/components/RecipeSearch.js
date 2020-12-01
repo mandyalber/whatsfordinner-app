@@ -10,16 +10,10 @@ export default function RecipeSearch(props) {
             <ul className="results">
                 {store.map((recipe, i) =>
                     <li key={i}>
-                        <Recipe                            
-                            name={recipe.name}
-                            ingredients={recipe.ingredients}
-                            steps={recipe.steps}
-                            imageURL={recipe.imageURL}
-                            originalURL={recipe.originalURL}
-                        /> <button>Save</button>
+                        <Recipe {...recipe} /> <button>Save</button>
                     </li>
                 )}
-            </ul>            
+            </ul>
         </div >
     )
 }

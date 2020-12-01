@@ -18,6 +18,12 @@ header {
     font-size: 14px;
 }
 
+main {
+    grid-area: main;
+    width: 100%;
+    padding: 0 5% 0 0;
+}
+
 sidebar {
     grid-area: sidebar;
     background-color: lightgrey;    
@@ -38,10 +44,6 @@ sidebar li {
     margin-bottom: 10px;
 }
 
-main {
-    grid-area: main;
-}
-
 footer {
     display: none;
 }
@@ -52,6 +54,17 @@ form.login-form {
 
 form {
     margin: 0% 15% 15% 15%;
+}
+
+form.recipe-filters {
+    margin: 0% 2%;
+    width: 100%;
+}
+
+.recipe-filters input[type=text], .recipe-filters label, .recipe-filters input button {
+    font-size: 12px;
+    width: 50px;
+    margin: .5%;
 }
 
 h2, p {
@@ -74,7 +87,9 @@ li {
 
 img {
     width: 100%;
+    float: left;
     border-radius: 10px;
+    margin-bottom: 5%;
 }
 
 @media screen and (min-width: 800px){
@@ -86,12 +101,18 @@ img {
         min-height: 500px;
     }
 
+    header {
+        width: 100%;
+        z-index: 1;
+    }
     
     sidebar {
         grid-area: sidebar;
         background-color: lightgrey;
-        position: relative;
+        position: fixed;       
+        height: 100%;
         width: 200px;
+        padding-top: 150px;
     }
 
     sidebar li {   
@@ -104,6 +125,10 @@ img {
     
     main {
         grid-area: main;
+        float: right;
+        
+        max-width: 500px;
+        margin: 0 200px 40px
     }
     
     footer {
@@ -112,6 +137,7 @@ img {
         text-align: center;
         padding: 20px;
         background-color: dimgray;
+        z-index: 1;
     }
 
     img {
@@ -121,6 +147,17 @@ img {
 
     form {
         margin: 5% 5% 15% 5%;
+    }
+
+    form.recipe-filters {
+        margin: 0% 2%;
+        width: 90%;
+    }
+    
+    .recipe-filters input[type=text], .recipe-filters label, .recipe-filters input button {
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 5%;
     }
 
     form.login-form {

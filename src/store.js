@@ -469,7 +469,6 @@ export default [
             0,
             0
         ],
-        "imageURL": "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg",
         "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
     },
     {
