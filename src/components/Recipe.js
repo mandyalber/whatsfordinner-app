@@ -6,8 +6,8 @@ export default function Recipe(props) {
             {(!props.imageURL) ? <img src="https://www.weightwatchers.ca/images/4105/dynamic/foodandrecipes/2015/02/us_img_recipe_default_600x600.jpg" /> : <img src={props.imageURL} />}
             <h3>{props.name} </h3>
             <ul>Ingredients Needed:
-                {props.ingredients.map(ingredient =>
-                <li>{ingredient.quantity} {ingredient.name}</li>
+                {props.ingredients.map((ingredient, i) =>
+                <li key={i}>{ingredient.quantity} {ingredient.name}</li>
             )}
             </ul>
             <p>{props.steps.map(step => step + " ")}</p>

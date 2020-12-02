@@ -7,13 +7,13 @@ export default function CreateAccount(props) {
             <form action="">
                 <fieldset>
                     <legend>Enter your info</legend>
-                    <label for="fname">First Name: </label>
+                    <label htmlFor="fname">First Name: </label>
                     <input id="fname" type="text" />
-                    <label for="lname">Last Name: </label>
+                    <label htmlFor="lname">Last Name: </label>
                     <input id="lname" type="text" />
-                    <label for="email">Email: </label>
+                    <label htmlFor="email">Email: </label>
                     <input id="email" type="text" />
-                    <label for="password">Password: </label>
+                    <label htmlFor="password">Password: </label>
                     <input type="text" name="" id="password" />
                     <input type="submit" value="Submit" />
                 </fieldset>

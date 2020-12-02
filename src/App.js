@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div class="app">
+    <div className="app">
       <header><h1>What's For Dinner?</h1></header>
       <sidebar>{renderSidebarRoute()}</sidebar>
       <main>{renderMainRoute()}</main>

@@ -9,7 +9,7 @@ export default function UserDashboard(props) {
             <h2>Welcome [User]!</h2>
             <p>Here is where we will display your recipes for the week once you click the button! It will look something like this:</p>
             <ul>{weekdays.map((day, i) =>
-                <li>{day}:<br /><br /><Recipe
+                <li key={i}>{day}:<br /><br /><Recipe
                     {...store[i]} />
                 </li>)}
             </ul>

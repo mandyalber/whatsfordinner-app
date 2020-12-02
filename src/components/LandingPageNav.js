@@ -6,9 +6,9 @@ export default function LandingPageNav(props) {
             <form className="login-form" action="/user-dashboard">
                 <fieldset>
                     <legend>Login:</legend>
-                    <label for="username">Username: </label>
+                    <label htmlFor="username">Username: </label>
                     <input id="username" type="text" />
-                    <label for="password">Password: </label>
+                    <label htmlFor="password">Password: </label>
                     <input type="text" name="" id="password" />
                     <button>Submit</button>
                 </fieldset>
