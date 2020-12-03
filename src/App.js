@@ -1,5 +1,5 @@
-import React from 'react';
-import {Route} from 'react-router-dom'
+import React, { useState } from 'react';
+import { Route } from 'react-router-dom'
 import CreateAccount from './components/CreateAccount';
 import CreateAccountNav from './components/CreateAccountNav';
 import LandingPage from './components/LandingPage';
@@ -9,8 +9,39 @@ import RecipeSearchNav from './components/RecipeSearchNav';
 import UserDashboard from './components/UserDashboard';
 import UserDashboardNav from './components/UserDashboardNav';
 import './App.css'
+import config from './config'
+import RecipesContext from './components/RecipesContext';
 
 function App() {
+
+  const [savedRecipes, setSavedRecipes] = useState({ savedRecipes: [] });
+  const [searchedRecipes, setSearchedRecipes] = useState({ searchedRecipes: [] });
+
+  function getSavedRecipes() {
+    console.log('savedrecipes ran')
+    fetch(`${config.API_ENDPOINT}/recipes`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status)
+        }
+        return response.json()
+      })
+      .then(recipeRes => setSavedRecipes({ savedRecipes: recipeRes }))
+      .catch(error => console.log(error))
+  }
+
+  function getSearchedRecipes() {
+    fetch(`${config.API_ENDPOINT}/recipes`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status)
+        }
+        return response.json()
+      })
+      .then(recipeRes => setSearchedRecipes({ searchedRecipes: recipeRes }))
+      .catch(error => console.log(error))
+  }
+  
 
   function renderSidebarRoute() {
     return (
@@ -34,13 +65,22 @@ function App() {
     )
   }
 
+  const contextValue = {
+    savedRecipes: savedRecipes.savedRecipes,
+    searchedRecipes: searchedRecipes.searchedRecipes,
+    getSavedRecipes: getSavedRecipes,
+    getSearchedRecipes: getSearchedRecipes,
+  }
+  
   return (
-    <div className="app">
-      <header><h1>What's For Dinner?</h1></header>
-      <sidebar>{renderSidebarRoute()}</sidebar>
-      <main>{renderMainRoute()}</main>
-      <footer>Footer</footer>
-    </div>
+    <RecipesContext.Provider value={contextValue}>
+      <div className="app">
+        <header><h1>What's For Dinner?</h1></header>
+        <nav>{renderSidebarRoute()}</nav>
+        <main>{renderMainRoute()}</main>
+        <footer>Footer</footer>
+      </div>
+    </RecipesContext.Provider>
   );
 }
 
