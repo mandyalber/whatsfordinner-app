@@ -16,7 +16,7 @@ export default function RecipeSearchNav(props) {
                                 <input type="text" id="filter2" className="recipe-filters" />
                                 <label htmlFor="filter3">Filter 3: </label>
                                 <input id="filter3" type="text" className="recipe-filters" />
-                                <input onClick={context.getSearchedRecipes()} type="submit" value="Submit" className="recipe-filters" />
+                                <input onClick={context.getSearchedRecipes} type="button" value="Submit" className="recipe-filters" />
                             </fieldset>
                         </form>
                         <ul>

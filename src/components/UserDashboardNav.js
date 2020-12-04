@@ -9,7 +9,7 @@ export default function UserDashboardNav(props) {
                     <ul className="user-dashboard-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/recipe-search">Search Recipes</a></li>
-                        <li><a href="#" onClick={context.getSavedRecipes()}>Generate Recipes</a></li>
+                        <li><a href="#" onClick={context.getSavedRecipes}>Generate Recipes</a></li>
                         <li><a href="#">Saved Recipes</a></li>
                         <li><a href="/">Sign Out</a></li>
                     </ul>

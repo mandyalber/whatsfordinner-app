@@ -14,8 +14,8 @@ import RecipesContext from './components/RecipesContext';
 
 function App() {
 
-  const [savedRecipes, setSavedRecipes] = useState({ savedRecipes: [] });
-  const [searchedRecipes, setSearchedRecipes] = useState({ searchedRecipes: [] });
+  const [savedRecipes, setSavedRecipes] = useState([]);
+  const [searchedRecipes, setSearchedRecipes] = useState([]);
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
@@ -66,13 +66,13 @@ function App() {
   }
 
   const contextValue = {
-    savedRecipes: savedRecipes.savedRecipes,
-    searchedRecipes: searchedRecipes.searchedRecipes,
-    getSavedRecipes: getSavedRecipes,
-    getSearchedRecipes: getSearchedRecipes,
+    savedRecipes,
+    searchedRecipes,
+    getSavedRecipes,
+    getSearchedRecipes,
   }
   
-  return (
+  return ( 
     <RecipesContext.Provider value={contextValue}>
       <div className="app">
         <header><h1>What's For Dinner?</h1></header>
