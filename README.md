@@ -1,10 +1,4 @@
-Research:
-
-https://www.npmjs.com/package/cors#configuring-cors
-
-
-
-# Getting Started with Create React App
+# What's For Dinner App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

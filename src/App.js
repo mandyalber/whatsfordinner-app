@@ -47,7 +47,7 @@ function App() {
     return (
       <>
         <Route exact path='/' component={LandingPageNav} />
-        <Route exact path='/create-account' component={CreateAccountNav} />
+        <Route path='/create-account' component={CreateAccountNav} />
         <Route path='/user-dashboard' component={UserDashboardNav} />
         <Route path='/recipe-search' component={RecipeSearchNav} />
       </>
@@ -58,7 +58,7 @@ function App() {
     return (
       <>
         <Route exact path='/' component={LandingPage} />
-        <Route exact path='/create-account' component={CreateAccount} />
+        <Route path='/create-account' component={CreateAccount} />
         <Route path='/user-dashboard' component={UserDashboard} />
         <Route path='/recipe-search' component={RecipeSearch} />
       </>
