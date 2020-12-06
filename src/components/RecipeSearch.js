@@ -8,12 +8,16 @@ export default function RecipeSearch(props) {
     const search_recipes = recipes.length === 0 ? 'Search for some recipes!' :
         recipes.searchedRecipes.map((recipe, i) =>
             <li key={i}><Recipe {...recipe} /> <button>Save</button></li>)
-
+ 
     return (
         <div className="recipe-search">
             <h2>Search for Recipes!</h2>
             <p>This is where some search results will show up!</p>
-            <fieldset><ul className="results">{search_recipes}</ul></fieldset>
+            <fieldset>
+                <ul className="results">
+                    {search_recipes.length ? search_recipes : 'Sorry, no results. Try editing your filters and searching again.'}
+                </ul>
+            </fieldset>
         </div >
     )
 }
