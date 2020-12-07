@@ -19,7 +19,7 @@ function App() {
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
-    fetch(`${config.API_ENDPOINT}/recipes`)
+    fetch(`${config.API_ENDPOINT}/saved-recipes`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -40,7 +40,7 @@ function App() {
     console.log('getsearched ran')
 
     const queryString = formatQueryParams(params)
-    const url = `${config.API_ENDPOINT}/search-recipe?` + queryString
+    const url = `${config.API_ENDPOINT}/search-recipes?` + queryString
     console.log(url)
 
     fetch(url)
