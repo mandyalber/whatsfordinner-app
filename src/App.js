@@ -19,7 +19,7 @@ function App() {
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
-    fetch(`${config.API_ENDPOINT}/recipes`)
+    fetch(`${config.API_ENDPOINT}/saved-recipes`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -30,8 +30,20 @@ function App() {
       .catch(error => console.log(error))
   }
 
-  function getSearchedRecipes() {
-    fetch(`${config.API_ENDPOINT}/recipes`)
+  function formatQueryParams(params) {
+    const queryItems = Object.keys(params)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItems.join('&');
+  }
+
+  function getSearchedRecipes(params) {
+    console.log('getsearched ran')
+
+    const queryString = formatQueryParams(params)
+    const url = `${config.API_ENDPOINT}/search-recipes?` + queryString
+    console.log(url)
+
+    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -41,7 +53,6 @@ function App() {
       .then(recipeRes => setSearchedRecipes({ searchedRecipes: recipeRes }))
       .catch(error => console.log(error))
   }
-  
 
   function renderSidebarRoute() {
     return (
@@ -71,8 +82,8 @@ function App() {
     getSavedRecipes,
     getSearchedRecipes,
   }
-  
-  return ( 
+
+  return (
     <RecipesContext.Provider value={contextValue}>
       <div className="app">
         <header><h1>What's For Dinner?</h1></header>

@@ -2,21 +2,22 @@ import React from 'react';
 import default_img from '../images/img_recipe_default.jpg'
 
 export default function Recipe(props) {
-    const { imageURL, name, originalURL } = props
-    const ingredients = !props.ingredients ? 'no ingredients' :
-        props.ingredients.map((ingredient, i) =>
-            <li key={i}>{ingredient.quantity} {ingredient.name}</li>)
-    const steps = !props.steps ? 'no steps' : props.steps.map(step => step + " ")
+    const { title, sourceUrl } = props
+    const image = (!props.image) ? <img src={default_img} alt="recipe-img" /> : <img src={props.image} alt="recipe-img" />
+    const steps = !props.analyzedInstructions ? '' : props.analyzedInstructions[0].steps.map(
+        (step,i) => <li key={i}>{step.step}</li>)
+    const ingredients = !props.nutrition.ingredients ? '' : props.nutrition.ingredients.map(
+        (ingredient, i) =>
+            <li key={i}>{ingredient.amount} {ingredient.unit} {ingredient.name}</li>)
 
     return (
         <div>
-            {(!imageURL) ? <img src={default_img} alt="recipe-img" /> : <img src={imageURL} alt="recipe-img" />}
-            <h3>{name} </h3>
-            <ul>Ingredients Needed:
-                {ingredients}
-            </ul>
-            <p>{steps}</p>
-            <p>See more at <a href={originalURL}>Food.com</a></p>
+            {image}
+            <h3>{title} </h3>
+            <ul>{ingredients}</ul>
+            <br/>
+            <ul>{steps}</ul>
+            <p>See more at <a href={sourceUrl} target="_blank" rel="noreferrer">{sourceUrl}</a></p>
         </div>
     )
 }
