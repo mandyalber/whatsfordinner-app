@@ -103,6 +103,7 @@ img {
         grid-template-columns: auto auto;
         grid-template-rows: 100px 1fr;
         min-height: 500px;
+        position: relative;
     }
 
     header {
@@ -131,8 +132,7 @@ img {
         grid-area: main;
         float: right;        
         max-width: 700px;
-        min-height: 600px;
-        margin: 0 200px 40px
+        margin: 0 200px 100px 200px;
     }
     
     footer {
@@ -142,6 +142,9 @@ img {
         padding: 20px;
         background-color: dimgray;
         z-index: 1;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 
     img {
