@@ -8,14 +8,14 @@ export default function RecipeSearch(props) {
     const recipes = ctx.searchedRecipes
     const search_recipes = recipes.length === 0 ? 'Search for some recipes!' :
         recipes.searchedRecipes.map((recipe, i) =>
-            <li key={i}><Recipe {...recipe} /><SaveRecipe/></li>)
- 
+            <li key={i}><Recipe {...recipe} /><SaveRecipe {...recipe} /></li>)
+
     return (
         <div className="recipe-search">
             <h2>Search for Recipes!</h2>
             <p>This is where some search results will show up!</p>
             <fieldset>
-                <ul className="results">
+                <ul className="results">{/*add search filters to error msg*/}
                     {search_recipes.length ? search_recipes : 'Sorry, no results. Try editing your filters and searching again.'}
                 </ul>
             </fieldset>

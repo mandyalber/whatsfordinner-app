@@ -1,16 +1,18 @@
 import React from 'react';
-import RecipesContext from './RecipesContext';
 
-export default function RecipeFilters(props) {
-    const ctx = React.useContext(RecipesContext)
-    const getSearchedRecipes = ctx.getSearchedRecipes
+export default function RecipeFilters({getSearchedRecipes}) {
+    // const ctx = React.useContext(RecipesContext)
+    // const getSearchedRecipes = ctx.getSearchedRecipes
+
+    // Extrapolate list data to a file or an endpoint for your app to work on.
+    // Look at creating a getHTMLListOptions that takes in an array to return a list of HTML options.
     const cuisineList = ['African', 'American', 'British', 'Cajun', 'Caribbean', 'Chinese', 'Eastern European', 'European', 'French', 'German', 'Greek', 'Indian', 'Irish', 'Italian', 'Japanese', 'Jewish', 'Korean', 'Latin American', 'Mediterranean', 'Mexican', 'Middle Eastern', 'Nordic', 'Southern', 'Spanish', 'Thai', 'Vietnamese']
     const cuisineOptions = cuisineList.map((cuisine, i) => <option key={i + 1} value={cuisine.toLowerCase()}>{cuisine}</option>)
     const dietList = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian', 'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Whole30']
     const dietOptions = dietList.map((diet, i) => <option key={i + 1} value={diet.toLowerCase()}>{diet}</option>)
     const intolerancesList = ['Dairy', 'Egg', 'Gluten', 'Grain', 'Peanut', 'Seafood', 'Sesame', 'Shellfish', 'Soy', 'Sulfite', 'Tree Nut', 'Wheat']
     const intolerancesOptions = intolerancesList.map((intolerances, i) => <option key={i + 1} value={intolerances.toLowerCase()}>{intolerances}</option>)
-
+    //add prefills for ingredients, info hover for dropdowns
     function handleSubmit(e) {
         e.preventDefault()
         // get the form fields from the event
@@ -62,6 +64,7 @@ export default function RecipeFilters(props) {
                     id="includeIngredients"
                     name="includeIngredients"
                     className="recipe-filters"
+                    placeholder="e.g. broccoli, carrots"
                 />
                 <label
                     htmlFor="excludeIngredients"
@@ -72,7 +75,8 @@ export default function RecipeFilters(props) {
                     id="excludeIngredients"
                     name="excludeIngredients"
                     className="recipe-filters"
-                />
+                    placeholder="e.g. peanuts, pork"
+                />{/*add a reset filters button */}
                 <button type="submit" className="recipe-filters">Submit</button>
             </fieldset>
         </form>
