@@ -45,7 +45,7 @@ function App() {
 
     fetch(url)
       .then(response => {
-        if (!response.ok) {
+        if (!response.ok) {/*check if response 2XX instead*/
           throw new Error(response.status)
         }
         return response.json()
