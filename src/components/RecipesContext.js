@@ -3,7 +3,8 @@ import React from 'react'
 const RecipesContext = React.createContext({
   savedRecipes: [],  
   searchedRecipes: [],
-  getRecipes: () => {},
+  getSearchedRecipes: () => {},
+  getSavedRecipes: () => {}
 })
 
 export default RecipesContext;
