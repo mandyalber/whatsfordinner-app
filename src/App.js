@@ -16,6 +16,7 @@ function App() {
 
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
+  const [weekdayRecipes, setWeekdayRecipes] = useState([]);
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
@@ -26,7 +27,26 @@ function App() {
         }
         return response.json()
       })
-      .then(recipeRes => setSavedRecipes({ savedRecipes: recipeRes }))
+      .then(recipeRes => 
+        setSavedRecipes({ savedRecipes: recipeRes }),
+        setWeekdayRecipes([])
+      ) 
+      .catch(error => console.log(error))
+  }
+
+  function getWeekdayRecipes() {
+    console.log('weekdayrecipes ran')
+    fetch(`${config.API_ENDPOINT}/saved-recipes/weekdays`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.status)
+        }
+        return response.json()
+      })
+      .then(recipeRes => 
+        setWeekdayRecipes({ weekdayRecipes: recipeRes }),
+        setSavedRecipes([])
+      )
       .catch(error => console.log(error))
   }
 
@@ -79,8 +99,10 @@ function App() {
   const contextValue = {
     savedRecipes,
     searchedRecipes,
+    weekdayRecipes,
     getSavedRecipes,
-    getSearchedRecipes,
+    getWeekdayRecipes,
+    getSearchedRecipes, 
   }
 
   return (
