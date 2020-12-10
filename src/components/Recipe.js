@@ -12,7 +12,7 @@ export default function Recipe(props) {
             {image}
             <h3>{title}</h3>
             <p>{summary}</p>
-            <p>See full recipe at <a href={sourceUrl} target="_blank" rel="noreferrer">{sourceUrl}</a></p>
+            {sourceUrl && <p>See full recipe at <a href={sourceUrl} target="_blank" rel="noreferrer">{sourceUrl}</a></p>}
         </div>
     )
 }
