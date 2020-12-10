@@ -16,14 +16,14 @@ export default function RecipeFilters({getSearchedRecipes}) {
         e.preventDefault()
 
         const { cuisine, diet, intolerances, includeIngredients, excludeIngredients } = e.target
-        const params = {
+        const filters = {
             cuisine: cuisine.value,
             diet: diet.value,
             intolerances: intolerances.value,
             includeIngredients: includeIngredients.value,
             excludeIngredients: excludeIngredients.value
         }
-        getSearchedRecipes(params)
+        getSearchedRecipes(filters)
     }
 
     return (
