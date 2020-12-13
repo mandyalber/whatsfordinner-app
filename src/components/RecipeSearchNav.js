@@ -1,6 +1,7 @@
-import React from 'react';
-import RecipeFilters from './RecipeFilters';
-import RecipesContext from './RecipesContext';
+import React from 'react'
+import RecipeFilters from './RecipeFilters'
+import RecipesContext from './RecipesContext'
+import TokenService from './TokenService'
 
 export default function RecipeSearchNav(props) {
 
@@ -12,7 +13,7 @@ export default function RecipeSearchNav(props) {
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/user-dashboard">Back to Dashboard</a></li>
-                <li><a href="/">Sign Out</a></li>
+                <li><a href="/" onClick={TokenService.clearAuthToken}>Sign Out</a></li>
             </ul>
         </nav>
     )

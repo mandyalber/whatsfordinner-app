@@ -1,10 +1,10 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import config from '../config'
+import TokenService from './TokenService'
 
 export default function ProtectedRoute (props){
     const Component = props.render
-    const isAuthenticated = !!window.sessionStorage.getItem(config.TOKEN_KEY)
+    const isAuthenticated = TokenService.hasAuthToken
 
     return isAuthenticated ? <Component/> : <Redirect to='/'/>
 }
