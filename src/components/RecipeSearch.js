@@ -11,7 +11,7 @@ export default function RecipeSearch(props) {
             <li key={i}><Recipe {...recipe} /><SaveRecipe {...recipe} /></li>)
 
     return (
-        <div className="recipe-search">
+        <main className="recipe-search">
             <h2>Search for Recipes!</h2>
             <p>This is where some search results will show up!</p>
             <fieldset>
@@ -19,6 +19,6 @@ export default function RecipeSearch(props) {
                     {search_recipes.length ? search_recipes : 'Sorry, no results. Try editing your filters and searching again.'}
                 </ul>
             </fieldset>
-        </div >
+        </main >
     )
 }

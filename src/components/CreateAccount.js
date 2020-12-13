@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CreateAccount(props) {
     return (
-        <div className="create-account-form">
+        <main className="create-account-form">
             <h2>Create Your Account</h2>
             <form action="">
                 <fieldset>
@@ -18,6 +18,6 @@ export default function CreateAccount(props) {
                     <input type="submit" value="Submit" />
                 </fieldset>
             </form>
-        </div>
+        </main>
     )
 }

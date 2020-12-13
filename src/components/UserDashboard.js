@@ -12,11 +12,11 @@ export default function UserDashboard(props) {
     <li key={i}><Recipe {...recipe} /></li>)
 
     return (
-        <div className="user-dashboard">
+        <main className="user-dashboard">
             <h2>Welcome [User]!</h2>
             <p>Here is where we will display your recipes for the week once you click the button! It will look something like this:</p>
             <fieldset><ul>{weekday_items || saved_items}</ul></fieldset>
-        </div >
+        </main >
 
     )
 }
