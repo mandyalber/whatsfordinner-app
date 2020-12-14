@@ -32,9 +32,8 @@ export default function LoginForm(props) {
         email.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        
+        history.push('/user-dashboard')
       })
-      .then(TokenService.hasAuthToken ? history.push('/user-dashboard') : history.push('/'))
       .catch(res => {
         setError({ error: res.error })
         console.log(res)

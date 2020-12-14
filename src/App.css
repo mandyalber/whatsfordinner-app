@@ -75,7 +75,7 @@ input, label, button{
     margin-bottom: 10px;
 }
 
-input[type=text], input button {
+input {
     width: 100%;
     padding-right: 5%;
     display: inline-block;
