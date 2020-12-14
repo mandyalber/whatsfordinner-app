@@ -12,6 +12,7 @@ import './App.css'
 import config from './config'
 import RecipesContext from './components/RecipesContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import TokenService from './components/TokenService';
 
 function App() {
 
@@ -21,7 +22,12 @@ function App() {
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
-    fetch(`${config.API_ENDPOINT}/saved-recipes`)
+    fetch(`${config.API_ENDPOINT}/saved-recipes`, {
+      method: 'GET',
+      headers: {
+        "Authorization": `bearer ${TokenService.getAuthToken()}`
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -37,7 +43,13 @@ function App() {
 
   function getWeekdayRecipes() {
     console.log('weekdayrecipes ran')
-    fetch(`${config.API_ENDPOINT}/saved-recipes/weekdays`)
+    fetch(`${config.API_ENDPOINT}/saved-recipes/weekdays`, {
+      method: 'GET',
+      headers: {
+        "Authorization": `bearer ${TokenService.getAuthToken()}`
+      }
+    }
+    )
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -74,7 +86,7 @@ function App() {
       .then(recipeRes => setSearchedRecipes({ searchedRecipes: recipeRes }))
       .catch(error => console.log(error))
   }
- 
+
   const contextValue = {
     savedRecipes,
     searchedRecipes,
@@ -89,14 +101,14 @@ function App() {
       <div className="app">
         <header><h1>What's For Dinner?</h1></header>
         <Switch>
-          <Route path='/create-account' render={props => 
+          <Route path='/create-account' render={props =>
             <><CreateAccount /><CreateAccountNav /></>} />
           <ProtectedRoute path='/user-dashboard' render={props =>
-            <><UserDashboard/><UserDashboardNav/></>} />
+            <><UserDashboard /><UserDashboardNav /></>} />
           <ProtectedRoute path='/recipe-search' render={props =>
-           <><RecipeSearch/><RecipeSearchNav/></>}/>
-          <Route path='/' render={props => 
-            <><LandingPage/><LandingPageNav/></>} />
+            <><RecipeSearch /><RecipeSearchNav /></>} />
+          <Route path='/' render={props =>
+            <><LandingPage /><LandingPageNav /></>} />
         </Switch>
         <footer>Footer</footer>
       </div>
