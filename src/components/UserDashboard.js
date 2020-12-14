@@ -3,13 +3,12 @@ import Recipe from './Recipe'
 import RecipesContext from './RecipesContext';
 
 export default function UserDashboard(props) {
-
     const ctx = React.useContext(RecipesContext);
     const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    const {savedRecipes, weekdayRecipes} = ctx
-    const weekday_items = weekdayRecipes.length===0 ? '' : weekdays.map((day, i) => <li key={i}>{day}:<br /><br /> <Recipe {...weekdayRecipes.weekdayRecipes[i]} /> </li>);
-    const saved_items = savedRecipes.length===0 ? '' : savedRecipes.savedRecipes.map((recipe, i) =>
-    <li key={i}><Recipe {...recipe} /></li>)
+    const { savedRecipes, weekdayRecipes } = ctx
+    const weekday_items = weekdayRecipes.length === 0 ? '' : weekdays.map((day, i) => <li key={i}>{day}:<br /><br /> <Recipe {...weekdayRecipes.weekdayRecipes[i]} /> </li>);
+    const saved_items = savedRecipes.length === 0 ? '' : savedRecipes.savedRecipes.map((recipe, i) =>
+        <li key={i}><Recipe {...recipe} /></li>)
 
     return (
         <main className="user-dashboard">
