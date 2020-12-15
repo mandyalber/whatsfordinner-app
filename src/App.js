@@ -19,6 +19,17 @@ function App() {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [weekdayRecipes, setWeekdayRecipes] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  function handleLogOut (){
+    setIsAuthenticated(false)
+    TokenService.clearAuthToken()
+  }
+
+  function handleLogIn (){
+    setIsAuthenticated(true)
+  }
+
 
   function getSavedRecipes() {
     console.log('savedrecipes ran')
@@ -76,7 +87,12 @@ function App() {
     const url = `${config.API_ENDPOINT}/search-recipes?` + queryString
     console.log(url)
 
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        "Authorization": `bearer ${TokenService.getAuthToken()}`
+      }
+    })
       .then(response => {
         if (!response.ok) {/*check if response 2XX instead*/
           throw new Error(response.status)
@@ -94,6 +110,9 @@ function App() {
     getSavedRecipes,
     getWeekdayRecipes,
     getSearchedRecipes,
+    isAuthenticated,
+    handleLogIn,
+    handleLogOut
   }
 
   return (

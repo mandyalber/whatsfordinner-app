@@ -14,6 +14,9 @@ export default function UserDashboardNav(props) {
                 <li><a href="#" onClick={getWeekdayRecipes}>Generate Recipes</a></li>
                 <li><a href="#" onClick={getSavedRecipes}>Saved Recipes</a></li>
                 <li><a href="/" onClick={TokenService.clearAuthToken}>Sign Out</a></li>
+                {/* 
+                    Sign out should be an api request handled by your server and acted on a good response.
+                */}
             </ul>
         </nav>
     )

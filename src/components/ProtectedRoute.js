@@ -1,10 +1,11 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import TokenService from './TokenService'
+import RecipesContext from './RecipesContext';
 
 export default function ProtectedRoute (props){
+    const isAuthenticated = React.useContext(RecipesContext).isAuthenticated
     const Component = props.render
-    const isAuthenticated = TokenService.hasAuthToken
+    //const isAuthenticated = TokenService.hasAuthToken
 
     return isAuthenticated ? <Component/> : <Redirect to='/'/>
 }
