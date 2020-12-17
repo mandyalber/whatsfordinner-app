@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
 import config from '../config'
 
 export default function CreateAccount(props) {
@@ -8,14 +7,14 @@ export default function CreateAccount(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log('handlesubmit ran')
+        //console.log('handlesubmit ran')
         const { display_name, email, password } = e.target
         const user = {
             email: email.value,
             password: password.value,
             display_name: display_name.value,
         }
-        console.log(user)
+        //console.log(user)
 
         fetch(`${config.API_ENDPOINT}/users`, {
             method: "POST",
@@ -31,11 +30,11 @@ export default function CreateAccount(props) {
                 display_name.value = ''
                 email.value = ''
                 password.value = ''
-                //redirect to home/log in
+                props.history.push('/')
             })
             .catch(res => {
                 setError({ error: res.error })
-                console.log(res)
+                //console.log(res)
             })
     }
 

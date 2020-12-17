@@ -34,17 +34,18 @@ export default function LoginForm(props) {
         email.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        handleLogIn()
+        //console.log(res.name)
+        handleLogIn(res.name)
         history.push('/user-dashboard')
       })
       .catch(res => {
         setError({ error: res.error })
-        console.log(res)
+        //console.log(res)
       })
   }
 
   return (
-    <form className='login-form' onSubmit={handleSubmitJwtAuth}>
+    <form className='login-form' id='login-form' onSubmit={handleSubmitJwtAuth}>
       <div role='alert'>
         {error.error && <p className='red'>{error.error}</p>}
       </div>

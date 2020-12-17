@@ -1,22 +1,22 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import RecipesContext from './RecipesContext';
 import TokenService from './TokenService';
 
 export default function UserDashboardNav(props) {
-    const ctx = React.useContext(RecipesContext)
-    const { getSavedRecipes, getWeekdayRecipes } = ctx
+    const { getSavedRecipes, getWeekdayRecipes, handleLogOut } = React.useContext(RecipesContext)
+    //const { getSavedRecipes, getWeekdayRecipes, handleLogOut } = ctx
 
     return (
         <nav>
             <ul className="user-dashboard-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/recipe-search">Search Recipes</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/recipe-search">Search Recipes</Link></li>
                 <li><a href="#" onClick={getWeekdayRecipes}>Generate Recipes</a></li>
                 <li><a href="#" onClick={getSavedRecipes}>Saved Recipes</a></li>
-                <li><a href="/" onClick={TokenService.clearAuthToken}>Sign Out</a></li>
-                {/* 
-                    Sign out should be an api request handled by your server and acted on a good response.
-                */}
+                <li>
+                    <a href="/" onClick={handleLogOut}>Sign Out</a>
+                </li>
             </ul>
         </nav>
     )

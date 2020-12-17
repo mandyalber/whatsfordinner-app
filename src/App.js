@@ -20,19 +20,21 @@ function App() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [weekdayRecipes, setWeekdayRecipes] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setUserName] = useState('');
 
   function handleLogOut (){
     setIsAuthenticated(false)
     TokenService.clearAuthToken()
   }
 
-  function handleLogIn (){
+  function handleLogIn (name){
     setIsAuthenticated(true)
+    setUserName(name)
   }
 
 
   function getSavedRecipes() {
-    console.log('savedrecipes ran')
+    //console.log('savedrecipes ran')
     fetch(`${config.API_ENDPOINT}/saved-recipes`, {
       method: 'GET',
       headers: {
@@ -53,7 +55,7 @@ function App() {
   }
 
   function getWeekdayRecipes() {
-    console.log('weekdayrecipes ran')
+    //console.log('weekdayrecipes ran')
     fetch(`${config.API_ENDPOINT}/saved-recipes/weekdays`, {
       method: 'GET',
       headers: {
@@ -81,11 +83,11 @@ function App() {
   }
 
   function getSearchedRecipes(params) {
-    console.log('getsearched ran')
+    //console.log('getsearched ran')
 
     const queryString = formatQueryParams(params)
     const url = `${config.API_ENDPOINT}/search-recipes?` + queryString
-    console.log(url)
+    //console.log(url)
 
     fetch(url, {
       method: 'GET',
@@ -111,6 +113,7 @@ function App() {
     getWeekdayRecipes,
     getSearchedRecipes,
     isAuthenticated,
+    userName,
     handleLogIn,
     handleLogOut
   }
@@ -121,7 +124,7 @@ function App() {
         <header><h1>What's For Dinner?</h1></header>
         <Switch>
           <Route path='/create-account' render={props =>
-            <><CreateAccount /><CreateAccountNav /></>} />
+            <><CreateAccount {...props} /><CreateAccountNav /></>} />
           <ProtectedRoute path='/user-dashboard' render={props =>
             <><UserDashboard /><UserDashboardNav /></>} />
           <ProtectedRoute path='/recipe-search' render={props =>

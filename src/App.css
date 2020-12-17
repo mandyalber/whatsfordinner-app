@@ -21,7 +21,7 @@ header {
 main {
     grid-area: main;
     width: 100%;
-    padding: 0 5% 0 0;
+    padding: 0 5% 10% 0;
 }
 
 nav {
@@ -48,8 +48,12 @@ footer {
     display: none;
 }
 
-form.login-form {
+div.login-sidebar {
     display: none;
+}
+
+div.login-mainpage {
+    display: block;
 }
 
 form {
@@ -98,6 +102,10 @@ img {
     float: left;
     border-radius: 10px;
     margin-bottom: 5%;
+}
+
+.red {
+    color: red;
 }
 
 @media screen and (min-width: 800px){
@@ -169,11 +177,11 @@ img {
         margin-bottom: 5%;
     }
 
-    form.login-form {
+    div.login-sidebar {
         display: block;
     }
 
-    li.log-in {
+    li.log-in, div.login-mainpage {
         display: none;
     }
 }

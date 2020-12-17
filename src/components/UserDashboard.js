@@ -12,8 +12,8 @@ export default function UserDashboard(props) {
 
     return (
         <main className="user-dashboard">
-            <h2>Welcome [User]!</h2>
-            <p>Here is where we will display your recipes for the week once you click the button! It will look something like this:</p>
+            <h2>Welcome {ctx.userName}!</h2>
+            <p>This is your User Dashboard. From here you can search for new recipes, generate some random recipes for the week, or look through your saved recipes. Let's get cooking!</p>
             <fieldset><ul>{weekday_items || saved_items}</ul></fieldset>
         </main >
 

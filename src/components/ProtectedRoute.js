@@ -5,7 +5,7 @@ import RecipesContext from './RecipesContext';
 export default function ProtectedRoute (props){
     const isAuthenticated = React.useContext(RecipesContext).isAuthenticated
     const Component = props.render
-    //const isAuthenticated = TokenService.hasAuthToken
-
+    
+    //return isAuthenticated ? <Component/> : <Redirect to='/'/>
     return isAuthenticated ? <Component/> : <Redirect to='/'/>
 }

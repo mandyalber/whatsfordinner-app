@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import config from '../config'
+import TokenService from './TokenService';
 
 export default function SaveRecipe(props) {
+    const [msg, setMsg] = useState('');
 
-    //console.log(props)
     function handleSaveClick() {
         console.log('handlesaveclick ran')
 
@@ -15,11 +16,10 @@ export default function SaveRecipe(props) {
             summary: props.summary
         }
 
-        console.log(recipe)
-        //fetch function to post to database
         fetch(`${config.API_ENDPOINT}/saved-recipes`, {
             method: "POST",
             headers: {
+                "Authorization": `bearer ${TokenService.getAuthToken()}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(recipe),
@@ -33,10 +33,17 @@ export default function SaveRecipe(props) {
                 return response.json()
             })
             .then(responseJson => {
-                console.log(responseJson)
+                setMsg(responseJson.message)            
             })
-            .catch((error) => console.log(error))
+            .catch((error) => setMsg(error.error))
     }
 
-    return <button onClick={handleSaveClick}>Save</button>
+    return (
+        <div>
+            <button onClick={handleSaveClick}>Save</button>
+            <div role='alert'>
+                {msg && <p className='red'>{msg}</p>}
+            </div>
+        </div>
+    )
 }
