@@ -6,7 +6,7 @@ export default function SaveRecipe(props) {
     const [msg, setMsg] = useState('');
 
     function handleSaveClick() {
-        console.log('handlesaveclick ran')
+        //console.log('handlesaveclick ran')
 
         const recipe = {
             recipeId: props.id,

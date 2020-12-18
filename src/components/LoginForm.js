@@ -50,9 +50,9 @@ export default function LoginForm(props) {
         {error.error && <p className='red'>{error.error}</p>}
       </div>
       <label htmlFor='login-form_email'>Email: </label>
-      <input required name='email' id='LoginForm__user_name' />
-      <label htmlFor='login-form__password'>Password: </label>
-      <input required name='password' type='password' id='login-form__password' />
+      <input required name='email' id='login-form_email' />
+      <label htmlFor='login-form_password'>Password: </label>
+      <input required name='password' type='password' id='login-form_password' />
       <button type='submit'>Login</button>
     </form>
   )
