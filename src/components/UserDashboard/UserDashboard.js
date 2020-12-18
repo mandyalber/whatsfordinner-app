@@ -1,6 +1,6 @@
 import React from 'react'
-import Recipe from './Recipe'
-import RecipesContext from './RecipesContext';
+import Recipe from '../Recipe/Recipe' 
+import RecipesContext from '../RecipesContext'
 
 export default function UserDashboard(props) {
     const ctx = React.useContext(RecipesContext);

@@ -1,6 +1,6 @@
 import React from 'react'
-import Recipe from './Recipe'
-import RecipesContext from './RecipesContext';
+import Recipe from '../Recipe/Recipe' 
+import RecipesContext from '../RecipesContext';
 import SaveRecipe from './SaveRecipe';
 
 export default function RecipeSearch(props) {

@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import RecipesContext from './RecipesContext';
-import TokenService from './TokenService';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import RecipesContext from '../RecipesContext'
 
 export default function UserDashboardNav(props) {
     const { getSavedRecipes, getWeekdayRecipes, handleLogOut } = React.useContext(RecipesContext)

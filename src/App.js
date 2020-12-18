@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import CreateAccount from './components/CreateAccount';
-import CreateAccountNav from './components/CreateAccountNav';
-import LandingPage from './components/LandingPage';
-import LandingPageNav from './components/LandingPageNav';
-import RecipeSearch from './components/RecipeSearch';
-import RecipeSearchNav from './components/RecipeSearchNav';
-import UserDashboard from './components/UserDashboard';
-import UserDashboardNav from './components/UserDashboardNav';
+import CreateAccount from './components/CreateAccount/CreateAccount';
+import CreateAccountNav from './components/CreateAccount/CreateAccountNav';
+import LandingPage from './components/LandingPage/LandingPage';
+import LandingPageNav from './components/LandingPage/LandingPageNav';
+import RecipeSearch from './components//RecipeSearch/RecipeSearch';
+import RecipeSearchNav from './components/RecipeSearch/RecipeSearchNav';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+import UserDashboardNav from './components/UserDashboard/UserDashboardNav';
 import './App.css'
 import config from './config'
 import RecipesContext from './components/RecipesContext';

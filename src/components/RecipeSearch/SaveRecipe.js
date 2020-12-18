@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import config from '../config'
-import TokenService from './TokenService';
+import config from '../../config'
+import TokenService from '../TokenService';
 
 export default function SaveRecipe(props) {
     const [msg, setMsg] = useState('');

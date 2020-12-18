@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import LoginForm from './LoginForm'
-import RecipesContext from './RecipesContext'
+import LoginForm from '../LoginForm/LoginForm'
+import RecipesContext from '../RecipesContext'
 
 export default function LandingPageNav(props) {
     const ctx = React.useContext(RecipesContext)

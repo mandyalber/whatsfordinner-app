@@ -1,7 +1,7 @@
 import React from 'react'
-import default_img from '../images/img_recipe_default.jpg'
+import default_img from '../../images/img_recipe_default.jpg'
 
-export default function Recipe(props) {
+export default function Recipe(props) { 
     const { title, sourceUrl } = props
     const image = !props.image ? <img src={default_img} alt="recipe-img" /> :
         <img src={props.image} alt="recipe-img" />
