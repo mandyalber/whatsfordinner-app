@@ -13,7 +13,7 @@ export default function RecipeSearchNav(props) {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/user-dashboard">Back to Dashboard</Link></li>
-                <li><a href="/" onClick={ctx.handleLogOut}>Sign Out</a></li>
+                <li><a href="/" onClick={ctx.handleLogOut}>Log Out</a></li>
             </ul>
         </nav>
     )

@@ -2,19 +2,17 @@ import React, { useState } from 'react'
 import config from '../../config'
 
 export default function CreateAccount(props) {
-
+    const [created, setCreated] = useState(false)
     const [error, setError] = useState({ error: null })
 
     function handleSubmit(e) {
         e.preventDefault()
-        //console.log('handlesubmit ran')
         const { display_name, email, password } = e.target
         const user = {
             email: email.value,
             password: password.value,
             display_name: display_name.value,
         }
-        //console.log(user)
 
         fetch(`${config.API_ENDPOINT}/users`, {
             method: "POST",
@@ -30,18 +28,17 @@ export default function CreateAccount(props) {
                 display_name.value = ''
                 email.value = ''
                 password.value = ''
-                props.history.push('/')
+                setCreated(true)
             })
             .catch(res => {
                 setError({ error: res.error })
-                //console.log(res)
             })
     }
-
 
     return (
         <main className="create-account-form">
             <h2>Create Your Account</h2>
+            {!created ?
             <form  onSubmit={handleSubmit} >
                 <fieldset>
                     <legend>Enter your info</legend>
@@ -56,7 +53,12 @@ export default function CreateAccount(props) {
                         {error.error && <p className='red'>{error.error}</p>}
                     </div>
                 </fieldset>
-            </form>
+            </form> :
+            <div>
+             <p>Successfully created a new account!</p>
+             <p><a href="/">Log In</a> now and start searching for some recipes.</p>
+             </div>
+        }
         </main>
     )
 }

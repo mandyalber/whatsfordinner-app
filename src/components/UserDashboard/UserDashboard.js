@@ -1,5 +1,5 @@
 import React from 'react'
-import Recipe from '../Recipe/Recipe' 
+import Recipe from '../Recipe/Recipe'
 import RecipesContext from '../RecipesContext'
 
 export default function UserDashboard(props) {
@@ -14,7 +14,10 @@ export default function UserDashboard(props) {
         <main className="user-dashboard">
             <h2>Welcome {ctx.userName}!</h2>
             <p>This is your User Dashboard. From here you can search for new recipes, generate some random recipes for the week, or look through your saved recipes. Let's get cooking!</p>
-            <fieldset><ul>{weekday_items || saved_items}</ul></fieldset>
+            {weekday_items || saved_items ?
+                <fieldset><ul>{weekday_items || saved_items}</ul></fieldset>
+                : ''
+            }
         </main >
 
     )

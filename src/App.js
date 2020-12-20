@@ -124,7 +124,7 @@ function App() {
         <header><h1>What's For Dinner?</h1></header>
         <Switch>
           <Route path='/create-account' render={props =>
-            <><CreateAccount {...props} /><CreateAccountNav /></>} />
+            <><CreateAccount /><CreateAccountNav /></>} />
           <ProtectedRoute path='/user-dashboard' render={props =>
             <><UserDashboard /><UserDashboardNav /></>} />
           <ProtectedRoute path='/recipe-search' render={props =>
@@ -132,10 +132,11 @@ function App() {
           <Route path='/' render={props =>
             <><LandingPage /><LandingPageNav /></>} />
         </Switch>
-        <footer>Footer</footer>
+        <footer>Created by Amanda Alber 2020</footer>
       </div>
     </RecipesContext.Provider>
   );
 }
 
 export default App;
+

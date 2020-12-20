@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterLists from './FilterListsStore'
+import filterLists from './FilterListsStore'
 
 export default function RecipeFilters({getSearchedRecipes}) {
 
@@ -7,11 +7,10 @@ export default function RecipeFilters({getSearchedRecipes}) {
         return array.map((cuisine, i) => <option key={i + 1} value={cuisine.toLowerCase()}>{cuisine}</option>)
     }
 
-    const cuisineOptions = getHTMLListOptions(FilterLists.cuisineList) 
-    const dietOptions = getHTMLListOptions(FilterLists.dietList)
-    const intolerancesOptions = getHTMLListOptions(FilterLists.intolerancesList)
+    const cuisineOptions = getHTMLListOptions(filterLists.cuisineList) 
+    const dietOptions = getHTMLListOptions(filterLists.dietList)
+    const intolerancesOptions = getHTMLListOptions(filterLists.intolerancesList)
 
-    //add info hover for dropdowns
     function handleSubmit(e) {
         e.preventDefault()
 

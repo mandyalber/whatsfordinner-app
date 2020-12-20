@@ -7,11 +7,17 @@ export default function LandingPageNav(props) {
     const ctx = React.useContext(RecipesContext)
     return (
         < nav className="landing-page-nav" >
-            {ctx.isAuthenticated ? <a href="/" onClick={ctx.handleLogOut}>Sign Out</a>
-                : <div> 
+            {ctx.isAuthenticated ?
+                <div>
+                    <ul>
+                        <li><Link to="/user-dashboard">User Dashboard</Link></li>
+                        <li><Link to ="/recipe-search">Search Recipes</Link></li>
+                        <li><a href="/" onClick={ctx.handleLogOut}>Log Out</a></li>
+                    </ul>
+                </div> :
+                <div>
                     <div className="login-sidebar"><LoginForm {...props} /></div>
                     <ul>
-                        
                         <li className="log-in"><a href="#login-form">Log In</a></li>
                         <li><Link to="/create-account">Create an Account</Link></li>
                     </ul>
@@ -19,4 +25,4 @@ export default function LandingPageNav(props) {
             }
         </nav >
     )
-}
+}//When logged in and redirected to Home, need options to navigate back to dashboard or search.

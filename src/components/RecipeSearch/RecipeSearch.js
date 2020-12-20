@@ -10,10 +10,7 @@ export default function RecipeSearch(props) {
         recipes.searchedRecipes.recipes.map((recipe, i) =>
             <li key={i}><Recipe {...recipe} /><SaveRecipe {...recipe} /></li>)
     const filters = !ctx.searchedRecipes.searchedRecipes ? '' : ctx.searchedRecipes.searchedRecipes.filters
-    
-    
-    
-    
+        
     return (
         <main className="recipe-search">
             <h2>Search for Recipes!</h2>
