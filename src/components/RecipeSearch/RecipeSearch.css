@@ -1,0 +1,31 @@
+form.recipe-filters {
+    margin: 0% 2%;
+    width: 100%;
+}
+
+.recipe-filters input[type=text], .recipe-filters label, .recipe-filters input button {
+    font-size: 12px;
+    width: 50px;
+    margin: .5%;
+}
+
+input[type=text]::placeholder {
+    font-style: italic;
+}
+
+@media screen and (min-width: 800px){
+
+    form.recipe-filters {
+        width: 90%;
+    }
+
+    .recipe-filters input[type=text], .recipe-filters label, .recipe-filters select, .recipe-filters input button {
+        font-size: 100px;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    label {
+        font-size: 20px;
+    }
+}

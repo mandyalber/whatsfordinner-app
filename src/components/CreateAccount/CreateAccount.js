@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import config from '../../config'
+import './CreateAccount.css'
 
 export default function CreateAccount(props) {
     const [created, setCreated] = useState(false)
@@ -39,26 +40,26 @@ export default function CreateAccount(props) {
         <main className="create-account-form">
             <h2>Create Your Account</h2>
             {!created ?
-            <form  onSubmit={handleSubmit} >
-                <fieldset>
-                    <legend>Enter your info</legend>
-                    <label htmlFor="display_name">Display Name: </label>
-                    <input id="display_name" name="display_name" type="text" required />
-                    <label htmlFor="email">Email: </label>
-                    <input id="email" name="email" type="email" required/>
-                    <label htmlFor="password">Password: </label>
-                    <input type="password" name="password" id="password" required/>
-                    <button type="submit">Submit</button>
-                    <div role='alert'>
-                        {error.error && <p className='red'>{error.error}</p>}
-                    </div>
-                </fieldset>
-            </form> :
-            <div>
-             <p>Successfully created a new account!</p>
-             <p><a href="/">Log In</a> now and start searching for some recipes.</p>
-             </div>
-        }
+                <form onSubmit={handleSubmit} >
+                    <fieldset>
+                        <legend>Enter your info</legend>
+                        <label htmlFor="display_name">Display Name: </label>
+                        <input id="display_name" name="display_name" type="text" required />
+                        <label htmlFor="email">Email: </label>
+                        <input id="email" name="email" type="email" required />
+                        <label htmlFor="password">Password: </label>
+                        <input type="password" name="password" id="password" required />
+                        <button type="submit">Submit</button>
+                        <div role='alert'>
+                            {error.error && <p className='red'>{error.error}</p>}
+                        </div>
+                    </fieldset>
+                </form> :
+                <div>
+                    <p>Successfully created a new account!</p>
+                    <p><a href="/">Log In</a> now and start searching for some recipes.</p>
+                </div>
+            }
         </main>
     )
 }

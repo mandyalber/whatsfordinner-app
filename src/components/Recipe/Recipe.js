@@ -1,5 +1,6 @@
 import React from 'react'
 import default_img from '../../images/img_recipe_default.jpg'
+import './Recipe.css'
 
 export default function Recipe(props) { 
     const { title, sourceUrl } = props
@@ -8,7 +9,7 @@ export default function Recipe(props) {
     const summary = !props.summary ? '' : props.summary.replace(/(<([^>]+)>)/gi, "")
 
     return (
-        <div>
+        <div className="recipe">
             {image}
             <h3>{title}</h3>
             <p>{summary}</p>

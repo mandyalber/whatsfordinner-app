@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import RecipeFilters from './RecipeFilters'
 import RecipesContext from '../RecipesContext' 
+import './RecipeSearch.css'
 
 export default function RecipeSearchNav(props) {
     const ctx = React.useContext(RecipesContext)

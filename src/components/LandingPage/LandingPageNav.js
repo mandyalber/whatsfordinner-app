@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import LoginForm from '../LoginForm/LoginForm'
 import RecipesContext from '../RecipesContext'
+import './LandingPage.css'
 
 export default function LandingPageNav(props) {
     const ctx = React.useContext(RecipesContext)
@@ -25,4 +26,4 @@ export default function LandingPageNav(props) {
             }
         </nav >
     )
-}//When logged in and redirected to Home, need options to navigate back to dashboard or search.
+}

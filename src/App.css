@@ -52,23 +52,12 @@ div.login-sidebar {
     display: none;
 }
 
-div.login-mainpage {
+div.mainpage {
     display: block;
 }
 
 form {
     margin: 0% 15% 15% 15%;
-}
-
-form.recipe-filters {
-    margin: 0% 2%;
-    width: 100%;
-}
-
-.recipe-filters input[type=text], .recipe-filters label, .recipe-filters input button {
-    font-size: 12px;
-    width: 50px;
-    margin: .5%;
 }
 
 h2, p {
@@ -83,10 +72,6 @@ input {
     width: 100%;
     padding-right: 5%;
     display: inline-block;
-}
-
-input[type=text]::placeholder {
-    font-style: italic;
 }
 
 ul {
@@ -124,7 +109,6 @@ img {
     
     nav {
         grid-area: sidebar;
-        background-color: lightgrey;
         position: fixed;       
         height: 100%;
         width: 200px;
@@ -166,22 +150,37 @@ img {
         margin: 5% 5% 15% 5%;
     }
 
-    form.recipe-filters {
-        margin: 0% 2%;
-        width: 90%;
-    }
-    
-    .recipe-filters input[type=text], .recipe-filters label, .recipe-filters select, .recipe-filters input button {
-        font-size: 14px;
-        width: 100%;
-        margin-bottom: 5%;
-    }
 
     div.login-sidebar {
         display: block;
     }
 
-    li.log-in, div.login-mainpage {
+    li.log-in, div.mainpage {
         display: none;
     }
 }
+
+/*
+Maybe color behind message text.
+
+Fix URL overflow on mobile.
+
+Nav is not centered on mobile.
+
+Need to align filters better, add space between form buttons.
+
+Not sized to screen on Mobile.
+
+Extra left margin on Mobile.
+
+Needs more margin on bottom on Mobile.
+
+Style Nav links as buttons with hover effect.
+
+Add Image/Logo and color theme of 2-3 colors. 
+
+Style saved recipes more minimally than search recipes: omit summary, smaller image/text.
+
+----
+Hamburger menu for Nav?
+*/

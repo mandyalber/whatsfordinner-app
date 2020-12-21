@@ -1,5 +1,6 @@
 import React from 'react';
 import filterLists from './FilterListsStore'
+import './RecipeSearch.css'
 
 export default function RecipeFilters({getSearchedRecipes}) {
 

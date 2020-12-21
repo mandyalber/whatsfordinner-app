@@ -2,6 +2,7 @@ import React from 'react'
 import Recipe from '../Recipe/Recipe' 
 import RecipesContext from '../RecipesContext';
 import SaveRecipe from './SaveRecipe';
+import './RecipeSearch.css'
 
 export default function RecipeSearch(props) {
     const ctx = React.useContext(RecipesContext)
