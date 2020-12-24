@@ -5,5 +5,5 @@ import { BrowserRouter } from 'react-router-dom';
 
 //smoke test
 test('renders UserDashboardNav without crashing', () => {
-  render(<BrowserRouter><UserDashboardNav /></BrowserRouter>);
+  render(<BrowserRouter><UserDashboardNav /></BrowserRouter>)
 }); 
