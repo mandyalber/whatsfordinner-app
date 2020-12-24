@@ -3,6 +3,7 @@ import RecipesContext from '../RecipesContext'
 import filterLists from './FilterListsStore'
 import './RecipeSearch.css'
 
+//displays filter options for user and fetches recipe results
 export default function RecipeFilters(props) {
     const { getSearchedRecipes } = React.useContext(RecipesContext)
     function getHTMLListOptions(array) {
@@ -32,46 +33,46 @@ export default function RecipeFilters(props) {
             <fieldset>
                 <legend>Filters:</legend>
                 <label
-                    htmlFor="cuisine"
+                    htmlFor={props.cuisineLabel}
                     className="filter-label">Cuisine Type:
                         </label>
-                <select id="cuisine" name="cuisine">
+                <select id={props.cuisineLabel} name="cuisine">
                     <option key="0" value="">No filter</option>
                     {cuisineOptions}
                 </select>
                 <label
-                    htmlFor="diet"
+                    htmlFor={props.dietLabel}
                     className="filter-label">Diet Type:
                     </label>
-                <select id="diet" name="diet">
+                <select id={props.dietLabel} name="diet">
                     <option key="0" value="">No filter</option>
                     {dietOptions}
                 </select>
                 <label
-                    htmlFor="intolerances"
+                    htmlFor={props.intoleranceLabel}
                     className="filter-label">Intolerances:
                     </label>
-                <select id="intolerances" name="intolerances">
+                <select id={props.intoleranceLabel} name="intolerances">
                     <option key="0" value="">No filter</option>
                     {intolerancesOptions}
                 </select>
                 <label
-                    htmlFor="includeIngredients"
+                    htmlFor={props.incIngredientsLabel}
                     className="filter-label">Include Ingredients:
                     </label>
                 <input
                     type="text"
-                    id="includeIngredients"
+                    id={props.incIngredientsLabel}
                     name="includeIngredients"
                     placeholder="e.g. broccoli, carrots"
                 />
                 <label
-                    htmlFor="excludeIngredients"
+                    htmlFor={props.exclIngredientsLabel}
                     className="filter-label">Exclude Ingredients:
                     </label>
                 <input
                     type="text"
-                    id="excludeIngredients"
+                    id={props.exclIngredientsLabel}
                     name="excludeIngredients"
                     placeholder="e.g. peanuts"
                 />

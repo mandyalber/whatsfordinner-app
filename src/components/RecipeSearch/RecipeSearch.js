@@ -1,9 +1,10 @@
 import React from 'react'
 import Recipe from '../Recipe/Recipe' 
-import RecipesContext from '../RecipesContext';
-import SaveRecipe from './SaveRecipe';
+import RecipesContext from '../RecipesContext'
+import SaveRecipe from './SaveRecipe'
 import './RecipeSearch.css'
 
+//displays recipe search results
 export default function RecipeSearch(props) {
     const ctx = React.useContext(RecipesContext)
     const recipes = ctx.searchedRecipes

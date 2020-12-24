@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { render } from '@testing-library/react'
 import UserDashboardNav from './UserDashboardNav'
 import { BrowserRouter } from 'react-router-dom'

@@ -3,25 +3,25 @@ div.login-sidebar {
     display: none;    
 }
 
-div.mainpage { 
+div.mobile { 
     width: 60%;  
     margin: auto auto 15% auto;
     display: block;
 }
 
-.mainpage input {
+.mobile input {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 5%;
 }
 
-.mainpage button {
+.mobile button {
     font-size: 14px;
     border-radius: 5px;
     padding: 5px 10px;
 }
 
-.mainpage button:hover {
+.mobile button:hover {
     background-color:  #ac501d;
     color: #ece9ec;
 }
@@ -51,7 +51,7 @@ div.mainpage {
         color: #ece9ec;
     }
 
-    li.log-in, div.mainpage {
+    li.log-in, div.mobile {
         display: none;
     }    
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import RecipesContext from '../RecipesContext'
 
+//displays navigation options for user dashboard page
 export default function UserDashboardNav(props) {
     const { getSavedRecipes, getWeekdayRecipes, handleLogOut } = React.useContext(RecipesContext)
 

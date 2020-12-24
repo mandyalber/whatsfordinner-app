@@ -5,9 +5,10 @@ import TokenService from '../TokenService'
 import RecipesContext from '../RecipesContext'
 import './LoginForm.css'
 
+//displays login form fields and authenticates user
 export default function LoginForm(props) {
-  const history = useHistory();
-  const [error, setError] = useState({ error: null });
+  const history = useHistory()
+  const [error, setError] = useState({ error: null })
   const { handleLogIn } = React.useContext(RecipesContext)
 
   function handleSubmitJwtAuth(e) {
@@ -47,10 +48,10 @@ export default function LoginForm(props) {
       <div role='alert'>
         {error.error && <p className='red'>{error.error}</p>}
       </div>
-      <label htmlFor='login-form_email'>Email: </label>
-      <input required name='email' id='login-form_email' />
-      <label htmlFor='login-form_password'>Password: </label>
-      <input required name='password' type='password' id='login-form_password' />
+      <label htmlFor={props.emailLabel}>Email: </label>
+      <input required name='email' id={props.emailLabel} />
+      <label htmlFor={props.passwordLabel}>Password: </label>
+      <input required name='password' type='password' id={props.passwordLabel} />
       <button type='submit'>Login</button>
     </form>
   )

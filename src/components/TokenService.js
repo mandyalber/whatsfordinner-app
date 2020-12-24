@@ -1,5 +1,6 @@
 import config from '../config'
 
+//service for JWT token management
 const TokenService = {
     saveAuthToken(token) {
       window.localStorage.setItem(config.TOKEN_KEY, token)

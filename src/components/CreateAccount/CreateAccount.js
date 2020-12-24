@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import config from '../../config'
 import './CreateAccount.css'
 
+//displays create account form fields and posts new users to database
 export default function CreateAccount(props) {
     const [created, setCreated] = useState(false)
     const [error, setError] = useState({ error: null })
@@ -39,6 +40,7 @@ export default function CreateAccount(props) {
     return (
         <main className="create-account-form">
             <h2>Create Your Account</h2>
+            {/*if the accounnt has not been created, display form. otherwise, display success page */}
             {!created ?
                 <form onSubmit={handleSubmit} >
                     <fieldset>

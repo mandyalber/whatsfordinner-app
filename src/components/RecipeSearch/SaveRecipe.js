@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import config from '../../config'
-import TokenService from '../TokenService';
+import TokenService from '../TokenService'
 
+//displays save button allowing users to post recipes to database 
 export default function SaveRecipe(props) {
-    const [msg, setMsg] = useState('');
+    const [msg, setMsg] = useState('')
 
     function handleSaveClick() {
 

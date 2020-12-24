@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { render } from '@testing-library/react'
 import LandingPageNav from './LandingPageNav'
 import { BrowserRouter } from 'react-router-dom'

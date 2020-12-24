@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//displays navigation options for create account page
 export default function CreateAccountNav(props) {
     
     return (

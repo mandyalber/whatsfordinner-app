@@ -13,4 +13,4 @@ const RecipesContext = React.createContext({
   getSavedRecipes: () => {}
 })
 
-export default RecipesContext;
+export default RecipesContext
