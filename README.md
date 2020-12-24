@@ -30,7 +30,7 @@ This app was built using React.js & Vanilla CSS for the Frontend and Node.js, Ex
 
 The API is hosted by Heroku and accepts the following requests
 
-#### Saved Recipes
+##### Saved Recipes
 
 Returns json data about recipes a user has saved.
 URL /api/saved-recipes
