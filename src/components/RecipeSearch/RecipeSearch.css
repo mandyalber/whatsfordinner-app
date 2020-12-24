@@ -4,6 +4,8 @@
 
 .recipe-search ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .recipe-search button {
@@ -14,6 +16,10 @@
 .recipe-search button:hover {
     background-color:  #ac501d;
     color: #ece9ec;
+}
+
+.results {
+    min-width: 0;
 }
 
 .desktop-filters {
@@ -35,11 +41,11 @@ form.recipe-filters {
 }
 
 .recipe-filters input[type=text], .recipe-filters select {
+    margin: 6px 0;
     font-size: 12px;    
-    margin-bottom: 5px;
-    width: 50%;
-    margin: 5px 10px 5px 0;
+    width: 45%;
     float: right;
+    border-radius: 5px;
 }
 
 .recipe-filters label {
@@ -61,11 +67,6 @@ form.recipe-filters {
     color: #ece9ec;
 }
 
-.recipe-filters input, select {
-    border-radius: 5px;
-    margin: 10px 0; 
-}
-
 input[type=text]::placeholder {
     font-style: italic;
 }
@@ -76,9 +77,6 @@ input[type=text]::placeholder {
         width: 100%;
         padding: 0;
         margin: 0; 
-    }
-    .results ul {
-        max-width: 90%;
     }
 
     .mobile-filters {
