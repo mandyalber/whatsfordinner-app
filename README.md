@@ -10,7 +10,7 @@ username: demo@demo.com
 password: Butter2020!
 
 ## Screenshots of your app
-![Landing Page Screenshot](/src/images/screenshots/landingpage.png?raw=true "Landing Page")
+![Landing Page Screenshot](src/images/screenshots/landingpage.PNG?raw=true "Landing Page")
 
 ## Summary
 
