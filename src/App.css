@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  
 }
 
 body {
@@ -15,11 +15,11 @@ body {
 .app {
     display: grid;
     grid-template-areas: "header header header header" 
-    "main main main main" "sidebar sidebar sidebar sidebar";
-    width:100%;  
+    "main main main main" "sidebar sidebar sidebar sidebar";  
 }
 
 header {
+    width: 100%;
     grid-area: header;
     text-align: center;
     padding: 20px;
@@ -31,7 +31,8 @@ header {
 }
 
 main {
-    grid-area: main;   
+    width: 100%;
+    grid-area: main;  
     padding: 3%;
     background-color: whitesmoke;
     font-size: 20px;
@@ -85,9 +86,6 @@ nav li a:hover {
 
 footer {
     display: none;
-    background-color: #ac501d;
-    color: #ece9ec;
-    opacity: 0.85;
 }
 
 a {
@@ -106,7 +104,7 @@ p {
     color: red;
 }
 
-@media screen and (min-width: 800px){
+@media only screen and (min-width: 800px){
     .app {
         grid-template-areas: "header header header header" 
         "sidebar main main main" "footer footer footer footer";
@@ -115,7 +113,6 @@ p {
     }
 
     header {
-        width: 100%;
         z-index: 1;
     }
 
@@ -155,8 +152,13 @@ p {
         padding: 20px;
         z-index: 1;
         width: 100%;
+        background-color: #ac501d;
+        color: #ece9ec;
+        opacity: 0.85;
     }
 }
 
 
 
+/*I should not have to or be able to scroll horizontally when viewing your app at a mobile screen resolution. Currently, I am able to scroll horizontally. Modify your CSS to correct this issue. 
+*/

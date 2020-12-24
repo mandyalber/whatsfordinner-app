@@ -18,8 +18,8 @@ export default function RecipeSearch(props) {
             <h2>Search for Recipes!</h2>
             <p>You can filter based on diet, cuisine, food intolerances, ingredients you already have, or ingredients you don't like. Or any combination of the above.</p>
             <p>Save the ones that sound yummy for later, so you won't be caught in a never ending loop of "What's for dinner?", "I don't know, what do you want?"</p>
-            <fieldset>
-                <ul className="results">
+            <fieldset className="results"> 
+                <ul >
                     {search_recipes.length ? search_recipes : `Sorry, no results for: ${filters && filters}. Try editing your filters and searching again.`}
                 </ul>
             </fieldset>

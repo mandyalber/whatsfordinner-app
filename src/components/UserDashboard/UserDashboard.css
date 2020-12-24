@@ -1,3 +1,8 @@
+.user-dashboard fieldset {
+    min-width: 0;
+    padding: 5%
+}
+
 .user-dashboard ul {
     list-style: none;
     margin: 0;
@@ -13,3 +18,5 @@
 .user-dashboard h4 {
     margin-top: 0;
 }
+
+

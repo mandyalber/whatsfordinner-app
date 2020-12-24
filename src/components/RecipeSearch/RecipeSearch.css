@@ -70,7 +70,17 @@ input[type=text]::placeholder {
     font-style: italic;
 }
 
-@media screen and (min-width: 800px){
+@media only screen and (min-width: 800px){
+    .results {
+        min-width: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0; 
+    }
+    .results ul {
+        max-width: 90%;
+    }
+
     .mobile-filters {
         display: none;
     }
