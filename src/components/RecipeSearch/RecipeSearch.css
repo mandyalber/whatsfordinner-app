@@ -39,7 +39,7 @@ form.recipe-filters {
     margin-bottom: 5px;
     width: 50%;
     margin: 5px 10px 5px 0;
-    float:right;
+    float: right;
 }
 
 .recipe-filters label {
@@ -79,8 +79,7 @@ input[type=text]::placeholder {
         display:block;
         width: 18%;
         margin: auto auto auto 1%;
-        position: fixed;       
-      
+        position: fixed;      
     }
 
     .recipe-filters {

@@ -6,6 +6,7 @@ import './RecipeSearch.css'
 
 export default function RecipeSearchNav(props) {
     const { handleLogOut } = React.useContext(RecipesContext)
+    
     return (
         <nav className="recipe-search-nav">
             <div className="mobile-filters"><RecipeFilters/></div>

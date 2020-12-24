@@ -1,7 +1,6 @@
 
 div.login-sidebar {
-    display: none;
-    
+    display: none;    
 }
 
 div.mainpage { 
@@ -29,7 +28,6 @@ div.mainpage {
 
 @media screen and (min-width: 800px){
 
-    
     div.login-sidebar {
         width: 70%;
         display: block;
@@ -55,6 +53,5 @@ div.mainpage {
 
     li.log-in, div.mainpage {
         display: none;
-    }
-    
+    }    
 }

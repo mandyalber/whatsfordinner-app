@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import config from '../../config'
 import TokenService from '../TokenService'
-import RecipesContext from '../RecipesContext';
+import RecipesContext from '../RecipesContext'
 import './LoginForm.css'
 
 export default function LoginForm(props) {

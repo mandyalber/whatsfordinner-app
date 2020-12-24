@@ -1,5 +1,5 @@
-import React from 'react';
-import RecipesContext from '../RecipesContext';
+import React from 'react'
+import RecipesContext from '../RecipesContext'
 import filterLists from './FilterListsStore'
 import './RecipeSearch.css'
 

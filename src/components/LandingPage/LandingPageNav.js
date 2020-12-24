@@ -6,6 +6,7 @@ import './LandingPage.css'
 
 export default function LandingPageNav(props) {
     const ctx = React.useContext(RecipesContext)
+    
     return (
         < nav className="landing-page-nav" >
             {ctx.isAuthenticated ?

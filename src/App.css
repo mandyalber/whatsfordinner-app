@@ -16,15 +16,14 @@ body {
     display: grid;
     grid-template-areas: "header header header header" 
     "main main main main" "sidebar sidebar sidebar sidebar";
-    width:100%;
-  
+    width:100%;  
 }
 
 header {
     grid-area: header;
     text-align: center;
     padding: 20px;
-    background-color: #ccb987/* #ac501d/*#933d2d #47190d*/;
+    background-color: #ccb987;
     color: #372e1e;
     font-size: 14px;
     min-height: 100px;
@@ -86,7 +85,7 @@ nav li a:hover {
 
 footer {
     display: none;
-    background-color:  #ac501d/*#933d2d #47190d*/;
+    background-color: #ac501d;
     color: #ece9ec;
     opacity: 0.85;
 }
@@ -125,8 +124,7 @@ p {
         padding: 3% 8%;
         min-height: 600px;
         margin: auto;
-    }
-    
+    }    
     
     nav {
         background: none;
@@ -148,8 +146,7 @@ p {
         padding: 10px;
         height: 35px;
         width: 150px;
-    }
-    
+    }    
 
     footer {
         display: block;
@@ -163,15 +160,3 @@ p {
 
 
 
-
-/*
-Fix URL overflow on mobile.
-
-Not sized to screen on Mobile.
-
-Style saved recipes more minimally than search recipes: omit summary, smaller image/text.
-
-<span>Photo by <a href="https://unsplash.com/@maddibazzocco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maddi Bazzocco</a> on <a href="https://unsplash.com/s/photos/recipe-favicon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-----
-Hamburger menu for Nav?
-*/
