@@ -1,0 +1,60 @@
+
+div.login-sidebar {
+    display: none;
+    
+}
+
+div.mainpage { 
+    width: 60%;  
+    margin: auto auto 15% auto;
+    display: block;
+}
+
+.mainpage input {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+.mainpage button {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.mainpage button:hover {
+    background-color:  #ac501d;
+    color: #ece9ec;
+}
+
+@media screen and (min-width: 800px){
+
+    
+    div.login-sidebar {
+        width: 70%;
+        display: block;
+        padding: 10%;
+    }
+
+    .login-sidebar input {
+        border-radius: 5px;
+        margin-bottom: 5%;
+        width: 100%;
+    }
+
+    .login-sidebar button {
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    .login-sidebar button:hover {
+        background-color:  #ac501d;
+        color: #ece9ec;
+    }
+
+    li.log-in, div.mainpage {
+        display: none;
+    }
+    
+}

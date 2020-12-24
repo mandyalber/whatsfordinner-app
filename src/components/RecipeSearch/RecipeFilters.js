@@ -1,14 +1,15 @@
 import React from 'react';
+import RecipesContext from '../RecipesContext';
 import filterLists from './FilterListsStore'
 import './RecipeSearch.css'
 
-export default function RecipeFilters({getSearchedRecipes}) {
-
-    function getHTMLListOptions (array){
+export default function RecipeFilters(props) {
+    const { getSearchedRecipes } = React.useContext(RecipesContext)
+    function getHTMLListOptions(array) {
         return array.map((cuisine, i) => <option key={i + 1} value={cuisine.toLowerCase()}>{cuisine}</option>)
     }
 
-    const cuisineOptions = getHTMLListOptions(filterLists.cuisineList) 
+    const cuisineOptions = getHTMLListOptions(filterLists.cuisineList)
     const dietOptions = getHTMLListOptions(filterLists.dietList)
     const intolerancesOptions = getHTMLListOptions(filterLists.intolerancesList)
 
@@ -32,7 +33,7 @@ export default function RecipeFilters({getSearchedRecipes}) {
                 <legend>Filters:</legend>
                 <label
                     htmlFor="cuisine"
-                    className="recipe-filters">Cuisine Type:
+                    className="filter-label">Cuisine Type:
                         </label>
                 <select id="cuisine" name="cuisine">
                     <option key="0" value="">No filter</option>
@@ -40,7 +41,7 @@ export default function RecipeFilters({getSearchedRecipes}) {
                 </select>
                 <label
                     htmlFor="diet"
-                    className="recipe-filters">Diet Type:
+                    className="filter-label">Diet Type:
                     </label>
                 <select id="diet" name="diet">
                     <option key="0" value="">No filter</option>
@@ -48,7 +49,7 @@ export default function RecipeFilters({getSearchedRecipes}) {
                 </select>
                 <label
                     htmlFor="intolerances"
-                    className="recipe-filters">Intolerances:
+                    className="filter-label">Intolerances:
                     </label>
                 <select id="intolerances" name="intolerances">
                     <option key="0" value="">No filter</option>
@@ -56,27 +57,25 @@ export default function RecipeFilters({getSearchedRecipes}) {
                 </select>
                 <label
                     htmlFor="includeIngredients"
-                    className="recipe-filters">Include Ingredients:
+                    className="filter-label">Include Ingredients:
                     </label>
                 <input
                     type="text"
                     id="includeIngredients"
                     name="includeIngredients"
-                    className="recipe-filters"
                     placeholder="e.g. broccoli, carrots"
                 />
                 <label
                     htmlFor="excludeIngredients"
-                    className="recipe-filters">Exclude Ingredients:
+                    className="filter-label">Exclude Ingredients:
                     </label>
                 <input
                     type="text"
                     id="excludeIngredients"
                     name="excludeIngredients"
-                    className="recipe-filters"
                     placeholder="e.g. peanuts"
                 />
-                <button type="submit" className="recipe-filters">Submit</button>
+                <button type="submit">Submit</button>
                 <button type="reset" value="Reset">Reset Filters</button>
             </fieldset>
         </form>

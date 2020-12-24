@@ -11,7 +11,7 @@ export default function LandingPageNav(props) {
             {ctx.isAuthenticated ?
                 <div>
                     <ul>
-                        <li><Link to="/user-dashboard">User Dashboard</Link></li>
+                        <li><Link to="/user-dashboard">Dashboard</Link></li>
                         <li><Link to ="/recipe-search">Search Recipes</Link></li>
                         <li><a href="/" onClick={ctx.handleLogOut}>Log Out</a></li>
                     </ul>

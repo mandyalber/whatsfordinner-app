@@ -1,92 +1,106 @@
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./images/logo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family:'Garamond';
+    color: #312016;
 }
 
 .app {
     display: grid;
     grid-template-areas: "header header header header" 
     "main main main main" "sidebar sidebar sidebar sidebar";
-    grid-template-columns: 0px ; 
-    min-height: 100px;
+    width:100%;
+  
 }
 
 header {
     grid-area: header;
     text-align: center;
     padding: 20px;
-    background-color: dimgray;
+    background-color: #ccb987/* #ac501d/*#933d2d #47190d*/;
+    color: #372e1e;
     font-size: 14px;
+    min-height: 100px;
+    opacity: 0.85;
 }
 
 main {
-    grid-area: main;
-    width: 100%;
-    padding: 0 5% 10% 0;
+    grid-area: main;   
+    padding: 3%;
+    background-color: whitesmoke;
+    font-size: 20px;
+    opacity: 0.85;
+    border-radius: 10px;
+    margin: auto;
+    padding-bottom: 100px;
 }
 
 nav {
-    grid-area: sidebar;
-    background-color: lightgrey;    
+    grid-area: sidebar;  
     position: fixed;
     bottom: 0;
-    width: 100%;
-        
+    width: 100%; 
+    background-color: #ccb987;  
 }
 
-nav li {  
-    margin: 0px 1%;   
-    float: left;
-    display: block;
-    text-align: center;    
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align:center;
+}
+
+nav li {   
     text-decoration: none;
+    display: block;
+    flex: 0 1 auto;    
     font-size: 12px;   
-    width: 15%;  
-    margin-bottom: 10px;
+    margin: 2%;
+    text-align: center; 
+}
+
+nav li a {
+    padding: 20%;      
+    color: #372e1e;  
+    text-decoration: none;
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+}
+
+nav li a:hover {
+    background-color:#372e1e;
+    color: #ccb987;
 }
 
 footer {
     display: none;
+    background-color:  #ac501d/*#933d2d #47190d*/;
+    color: #ece9ec;
+    opacity: 0.85;
 }
 
-div.login-sidebar {
-    display: none;
+a {
+    color: #312016;
 }
 
-div.mainpage {
-    display: block;
+a:hover {
+    color: #ccb987;
 }
 
-form {
-    margin: 0% 15% 15% 15%;
-}
-
-h2, p {
-    padding: 1% 5%;
-}
-
-input, label, button{
-    margin-bottom: 10px;
-}
-
-input {
-    width: 100%;
-    padding-right: 5%;
-    display: inline-block;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
-    text-decoration: none;
-}
-
-img {
-    width: 100%;
-    float: left;
-    border-radius: 10px;
-    margin-bottom: 5%;
+p {
+    line-height: 25px;
 }
 
 .red {
@@ -98,7 +112,6 @@ img {
         grid-template-areas: "header header header header" 
         "sidebar main main main" "footer footer footer footer";
         grid-template-columns: auto auto;
-        grid-template-rows: 100px 1fr;
         min-height: 500px;
     }
 
@@ -106,81 +119,59 @@ img {
         width: 100%;
         z-index: 1;
     }
+
+    main {       
+        width: 60%;
+        padding: 3% 8%;
+        min-height: 600px;
+        margin: auto;
+    }
+    
     
     nav {
+        background: none;
         grid-area: sidebar;
         position: fixed;       
         height: 100%;
-        width: 200px;
+        width: 30%;       
         padding-top: 110px;
     }
 
-    nav li {   
-        float: none;
-        text-align: left;    
-        text-decoration: none;
-        font-size: 14px;   
-        width: 100%;  
+    nav ul {
+       flex-direction: column; 
+        margin-left: 15px;  
+    }
+
+    nav ul li a {
+        background-color: #ccb987;
+        float:left;
+        padding: 10px;
+        height: 35px;
+        width: 150px;
     }
     
-    main {
-        grid-area: main;
-        float: right;        
-        max-width: 700px;
-        min-height: 600px;
-        margin: 0 200px 100px 200px;
-    }
-    
+
     footer {
         display: block;
         grid-area: footer;
         text-align: center;
         padding: 20px;
-        background-color: dimgray;
         z-index: 1;
         width: 100%;
     }
-
-    img {
-        max-width: 200px;    
-        float: right;
-    }
-
-    form {
-        margin: 5% 5% 15% 5%;
-    }
-
-
-    div.login-sidebar {
-        display: block;
-    }
-
-    li.log-in, div.mainpage {
-        display: none;
-    }
 }
 
+
+
+
 /*
-Maybe color behind message text.
-
 Fix URL overflow on mobile.
-
-Nav is not centered on mobile.
-
-Need to align filters better, add space between form buttons.
 
 Not sized to screen on Mobile.
 
-Extra left margin on Mobile.
-
-Needs more margin on bottom on Mobile.
-
-Style Nav links as buttons with hover effect.
-
-Add Image/Logo and color theme of 2-3 colors. 
-
 Style saved recipes more minimally than search recipes: omit summary, smaller image/text.
 
+<span>Photo by <a href="https://unsplash.com/@maddibazzocco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maddi Bazzocco</a> on <a href="https://unsplash.com/s/photos/recipe-favicon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 ----
 Hamburger menu for Nav?
 */

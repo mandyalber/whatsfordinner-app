@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
-import config from '../../config' 
+import config from '../../config'
 import TokenService from '../TokenService'
 import RecipesContext from '../RecipesContext';
-//import AuthApiService from '../../services/auth-api-service'
+import './LoginForm.css'
 
 export default function LoginForm(props) {
   const history = useHistory();
   const [error, setError] = useState({ error: null });
-  const handleLogIn = React.useContext(RecipesContext).handleLogIn
+  const { handleLogIn } = React.useContext(RecipesContext)
 
   function handleSubmitJwtAuth(e) {
     e.preventDefault()
@@ -34,7 +34,6 @@ export default function LoginForm(props) {
         email.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        //console.log(res.name)
         handleLogIn(res.name)
         history.push('/user-dashboard')
       })

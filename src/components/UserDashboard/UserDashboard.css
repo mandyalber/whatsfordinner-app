@@ -1,0 +1,15 @@
+.user-dashboard ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-dashboard h3 {
+    color:#9f2c13;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+.user-dashboard h4 {
+    margin-top: 0;
+}

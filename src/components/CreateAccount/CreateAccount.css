@@ -1,0 +1,25 @@
+
+.create-account-form fieldset {
+    width: 70%;
+    padding: 5%;
+    margin: auto;
+    border-radius: 5px;
+    
+}
+
+.create-account-form input {
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.create-account-form button {
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.create-account-form button:hover {
+    background-color:  #ac501d;
+    color: #ece9ec;
+}
+

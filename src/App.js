@@ -22,19 +22,17 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState('');
 
-  function handleLogOut (){
+  function handleLogOut() {
     setIsAuthenticated(false)
     TokenService.clearAuthToken()
   }
 
-  function handleLogIn (name){
+  function handleLogIn(name) {
     setIsAuthenticated(true)
     setUserName(name)
   }
 
-
   function getSavedRecipes() {
-    //console.log('savedrecipes ran')
     fetch(`${config.API_ENDPOINT}/saved-recipes`, {
       method: 'GET',
       headers: {
@@ -49,13 +47,13 @@ function App() {
       })
       .then(recipeRes =>
         setSavedRecipes({ savedRecipes: recipeRes }),
-        setWeekdayRecipes([])
+        setWeekdayRecipes([]),
       )
       .catch(error => console.log(error))
   }
 
   function getWeekdayRecipes() {
-    //console.log('weekdayrecipes ran')
+
     fetch(`${config.API_ENDPOINT}/saved-recipes/weekdays`, {
       method: 'GET',
       headers: {
@@ -83,11 +81,9 @@ function App() {
   }
 
   function getSearchedRecipes(params) {
-    //console.log('getsearched ran')
 
     const queryString = formatQueryParams(params)
     const url = `${config.API_ENDPOINT}/search-recipes?` + queryString
-    //console.log(url)
 
     fetch(url, {
       method: 'GET',
@@ -96,12 +92,14 @@ function App() {
       }
     })
       .then(response => {
-        if (!response.ok) {/*check if response 2XX instead*/
+        if (!response.ok) {
           throw new Error(response.status)
         }
         return response.json()
       })
-      .then(recipeRes => setSearchedRecipes({ searchedRecipes: recipeRes }))
+      .then(recipeRes => 
+        setSearchedRecipes({ searchedRecipes: recipeRes })
+        )
       .catch(error => console.log(error))
   }
 
@@ -121,7 +119,9 @@ function App() {
   return (
     <RecipesContext.Provider value={contextValue}>
       <div className="app">
-        <header><h1>What's For Dinner?</h1></header>
+        <header>          
+          <h1>What's For Dinner?</h1>
+        </header>
         <Switch>
           <Route path='/create-account' render={props =>
             <><CreateAccount /><CreateAccountNav /></>} />

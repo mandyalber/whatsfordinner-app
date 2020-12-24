@@ -9,9 +9,9 @@ export default function Recipe(props) {
     const summary = !props.summary ? '' : props.summary.replace(/(<([^>]+)>)/gi, "")
 
     return (
-        <div className="recipe">
+        <div className="recipe">            
+            <h4>{title}</h4>
             {image}
-            <h3>{title}</h3>
             <p>{summary}</p>
             {sourceUrl && <p>See full recipe at <a href={sourceUrl} target="_blank" rel="noreferrer">{sourceUrl}</a></p>}
         </div>

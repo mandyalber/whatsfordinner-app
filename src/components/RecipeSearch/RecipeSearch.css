@@ -1,12 +1,69 @@
-form.recipe-filters {
-    margin: 0% 2%;
-    width: 100%;
+.recipe-search {
+    padding-bottom: 300px;
 }
 
-.recipe-filters input[type=text], .recipe-filters label, .recipe-filters input button {
-    font-size: 12px;
-    width: 50px;
-    margin: .5%;
+.recipe-search ul {
+    list-style: none;
+}
+
+.recipe-search button {
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.recipe-search button:hover {
+    background-color:  #ac501d;
+    color: #ece9ec;
+}
+
+.desktop-filters {
+    display: none;
+}
+
+form.recipe-filters {
+    width: 100%;
+    background-color: whitesmoke;
+    opacity: 0.85;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.recipe-filters fieldset {
+    width: 100%;
+    padding: 1%;  
+    margin: 2px;
+}
+
+.recipe-filters input[type=text], .recipe-filters select {
+    font-size: 12px;    
+    margin-bottom: 5px;
+    width: 50%;
+    margin: 5px 10px 5px 0;
+    float:right;
+}
+
+.recipe-filters label {
+    margin: 6px 0;
+    width: 40%;
+    float: left;
+}
+
+.recipe-filters button {
+    float: left;
+    font-size: 12px; 
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+.recipe-filters button:hover {
+    background-color:  #ac501d;
+    color: #ece9ec;
+}
+
+.recipe-filters input, select {
+    border-radius: 5px;
+    margin: 10px 0; 
 }
 
 input[type=text]::placeholder {
@@ -14,18 +71,46 @@ input[type=text]::placeholder {
 }
 
 @media screen and (min-width: 800px){
-
-    form.recipe-filters {
-        width: 90%;
+    .mobile-filters {
+        display: none;
     }
 
-    .recipe-filters input[type=text], .recipe-filters label, .recipe-filters select, .recipe-filters input button {
-        font-size: 100px;
+    .desktop-filters {
+        display:block;
+        width: 18%;
+        margin: auto auto auto 1%;
+        position: fixed;       
+      
+    }
+
+    .recipe-filters {
+        margin: 0% 2%;
+        width: 60%;
+        display: flex;
+        flex-flow: row wrap;
+        float: right;
+        border-radius: 10px;
+    }
+
+    .recipe-filters fieldset {
+        border-radius: 10px;
+        padding: 0 10%;
+    }
+
+    .recipe-filters input[type=text], .recipe-filters select {
+        font-size: 14px;
         width: 100%;
-        margin-bottom: 5%;
+        margin-bottom: 1%;
     }
 
-    label {
-        font-size: 20px;
+    .recipe-filters button {
+        margin: 2%;
+        font-size: 13px;
+        float: left;
+    }
+
+    .recipe-filters label {
+        margin: 0;
+        width: 100%;
     }
 }

@@ -13,9 +13,9 @@ export default function LandingPage(props) {
             <p>Here you can browse search for recipes, save as many as you like, then generate a whole weeks worth of dinners at once! </p>
             <p>No more asking yourself daily, <span className="slogan">"what's for dinner?"</span></p>
             {isAuthenticated ? '' :
-                <div className="mainpage">
+                <div>
                     <p>Log in or <Link to="/create-account">create an account</Link> now, and start cooking!</p>
-                    <LoginForm {...props} />
+                    <div  className="mainpage"><LoginForm {...props} /></div>
                 </div>}
         </main >
     )

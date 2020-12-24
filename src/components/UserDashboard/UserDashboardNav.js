@@ -10,8 +10,8 @@ export default function UserDashboardNav(props) {
             <ul className="user-dashboard-nav">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/recipe-search">Search Recipes</Link></li>
-                <li><button onClick={getWeekdayRecipes}>Generate Recipes</button></li>
-                <li><button onClick={getSavedRecipes}>Saved Recipes</button></li>
+                <li><a href="#" onClick={getWeekdayRecipes}>Generate Recipes</a></li>
+                <li><a href="#" onClick={getSavedRecipes}>Saved Recipes</a></li>
                 <li><a href="/" onClick={handleLogOut}>Log Out</a></li>
             </ul>
         </nav>
