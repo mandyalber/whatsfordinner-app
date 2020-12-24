@@ -10,7 +10,18 @@ username: demo@demo.com
 password: Butter2020!
 
 ## Screenshots of your app
+
+#### Landing Page
 ![Landing Page Screenshot](src/images/screenshots/landingpage.PNG?raw=true "Landing Page")
+
+#### Create Account
+![Create Account Page Screenshot](src/images/screenshots/createaccount.PNG?raw=true "Create Account Page")
+
+#### User Dashboard
+![User Dashboard Page Screenshot](src/images/screenshots/dashboard.PNG?raw=true "User Dashboard Page")
+
+#### Recipe Search
+![Recipe Search Page Screenshot](src/images/screenshots/search.PNG?raw=true "Recipe Search Page")
 
 ## Summary
 
