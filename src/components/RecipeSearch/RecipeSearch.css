@@ -75,7 +75,7 @@ input[type=text]::placeholder {
     .results {
         min-width: 0;
         width: 100%;
-        padding: 0;
+        padding: 2%;
         margin: 0; 
     }
 

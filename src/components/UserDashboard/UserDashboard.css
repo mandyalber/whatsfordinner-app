@@ -19,4 +19,17 @@
     margin-top: 0;
 }
 
+.user-dashboard button {
+    font-size: 12px; 
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.user-dashboard button:hover {
+    background-color:  #ac501d;
+    color: #ece9ec;
+}
+
 

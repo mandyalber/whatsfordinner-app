@@ -46,7 +46,7 @@ function App() {
         return response.json()
       })
       .then(recipeRes =>
-        setSavedRecipes({ savedRecipes: recipeRes }),
+        setSavedRecipes(recipeRes),
         setWeekdayRecipes([]),
       )
       .catch(error => console.log(error))
@@ -58,8 +58,7 @@ function App() {
       headers: {
         "Authorization": `bearer ${TokenService.getAuthToken()}`
       }
-    }
-    )
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -67,7 +66,7 @@ function App() {
         return response.json()
       })
       .then(recipeRes =>
-        setWeekdayRecipes({ weekdayRecipes: recipeRes }),
+        setWeekdayRecipes(recipeRes),
         setSavedRecipes([])
       )
       .catch(error => console.log(error))
@@ -105,6 +104,7 @@ function App() {
     savedRecipes,
     searchedRecipes,
     weekdayRecipes,
+    setSavedRecipes,
     getSavedRecipes,
     getWeekdayRecipes,
     getSearchedRecipes,

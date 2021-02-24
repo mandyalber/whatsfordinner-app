@@ -111,7 +111,6 @@ p {
         grid-template-areas: "header header header header" 
         "sidebar main main main" "footer footer footer footer";
         grid-template-columns: auto auto;
-        min-height: 500px;
     }
 
     header {
@@ -120,8 +119,8 @@ p {
 
     main {       
         width: 60%;
-        padding: 3% 8%;
-        min-height: 600px;
+        padding: 3% 8%;        
+        min-height: 82.75vh;
         margin: auto;
     }    
     
